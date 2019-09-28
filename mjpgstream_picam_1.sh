@@ -14,4 +14,11 @@ echo "deb http://www.linux-projects.org/listing/uv4l_repo/raspbian/ wheezy main"
 sudo chmod 644 /etc/apt/sources.list
 sudo apt-get update
 sudo apt-get install uv4l uv4l-raspicam -y
-sudo reboot
+while true; do
+    read -p "Do you want to reboot? [Yes or No]:" yn
+    case $yn in
+        [Yy]* ) echo "Reboot after 3 seconds...";sleep 3s; sudo reboot;;
+        [Nn]* ) echo "After rebooting, remember to execute the program \"mjpgstream_picam_2\"";exit;;
+        * ) echo "Please answer yes or no.";;
+    esac
+done
