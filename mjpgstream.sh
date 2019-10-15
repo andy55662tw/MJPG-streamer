@@ -1,10 +1,10 @@
 #! /bin/bash
 #用於下載mjpg影像串流伺服器，並自動啟動伺服器。（此設定檔適用usb camera）
 sudo apt-get update
-sudo apt-get upgrade -y
 sudo apt-get install subversion libjpeg8-dev imagemagick libv4l-dev -y
-svn co https://svn.code.sf.net/p/mjpg-streamer/code/ ~/
-cd /home/pi/code/mjpg-streamer
+svn co https://svn.code.sf.net/p/mjpg-streamer/code/
+cp -rf code/ ../
+cd ~/code/mjpg-streamer
 make
 sudo make install
 ./mjpg_streamer -i "./input_uvc.so -y -n" -o "./output_http.so -w ./www" &
