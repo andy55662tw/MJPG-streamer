@@ -3,7 +3,7 @@
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install subversion libjpeg8-dev imagemagick libv4l-dev -y
-svn co https://svn.code.sf.net/p/mjpg-streamer/code/
+svn co https://svn.code.sf.net/p/mjpg-streamer/code/ ~/
 cd /home/pi/code/mjpg-streamer
 make
 sudo make install
